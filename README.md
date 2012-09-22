@@ -1,6 +1,6 @@
-/--------------------------------------------------------/
-/ESS Sisyphus game, a cerebral adventure made with Unity./
-/--------------------------------------------------------/
+ESS Sisyphus game, a cerebral adventure made with Unity.
+--------------------------------------------------------
+
 
 
 AUTHORS: 
