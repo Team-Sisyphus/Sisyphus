@@ -21,14 +21,17 @@ function Awake ()
 	var characterController : CharacterController = target.collider;
 	if (characterController)
 	{
+		Debug.Log("Collider Detected");
 		centerOffset = characterController.bounds.center - target.position;
 		headOffset = centerOffset;
+		Debug.Log("Head Offset: "+headOffset);
 		headOffset.y = characterController.bounds.max.y - target.position.y;
 	}
 	
 	if (target)
 	{
 		controller = target.GetComponent(ThirdPersonController);
+		Debug.Log("Target Assigned: "+controller);
 	}
 	
 	if (!controller)
