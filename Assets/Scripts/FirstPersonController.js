@@ -1,12 +1,10 @@
 var target : Camera;
 var controller : CharacterController;
-//var currentAngle : float = 1;
 var walkSpeed : int = 10;
 var turnSpeed : float = 1;
+var gravity : float = 200.0;
 
-var smooth = 2.0;
-var tiltAngle = 30.0;
-
+var lastpoint : float = 0;
 
 function Awake () {
 	if (!target){
@@ -15,7 +13,6 @@ function Awake () {
 	}
 	controller = target.collider;
 	Debug.Log("Found Collider");
-	//var currentPosition = transform.position;
 }
 
 
@@ -29,19 +26,19 @@ function Update () {
 	forward = controller.transform.TransformDirection(Vector3.forward);
 	forward.y = 0;
 //	Debug.Log(forward);
-	transform.Translate(forward.normalized*v*walkSpeed*Time.deltaTime,Space.World);
-	transform.Translate(Vector3.right*h*walkSpeed/2*Time.deltaTime,Space.Self);
-	transform.Rotate(Vector3.up,x*turnSpeed,Space.World);
-	transform.eulerAngles.z=0;
-	Debug.Log(transform.eulerAngles);
-	if (transform.rotation.x > 90){
-		Debug.Log("Rotation > 90");
-	}
-	transform.Rotate(Vector3.right,-y*turnSpeed,Space.Self);
-//	Debug.Log(transform.rotation);
-//	var target = Quaternion.Euler (y, 0, x);
-////     Dampen towards the target rotation
-//    transform.rotation = Quaternion.Slerp(transform.rotation, target,
-//                                   Time.deltaTime * smooth);;
+	moveDirection = Vector3(h,0,0);
+	moveDirection = transform.TransformDirection(moveDirection);
+	moveDirection = moveDirection*walkSpeed;
+	moveDirection.y -= gravity*Time.deltaTime;
+	controller.Move(moveDirection*Time.deltaTime);
+//	controller.SimpleMove(forward*v*walkSpeed*Time.deltaTime);
+//	controller.transform.Translate(forward.normalized*v*walkSpeed*Time.deltaTime,Space.World);
+//	controller.transform.Translate(Vector3.right*h*walkSpeed/2*Time.deltaTime,Space.Self);
+	controller.transform.Rotate(Vector3.up,x*turnSpeed,Space.World);
+	controller.transform.eulerAngles.z=0;
+	controller.transform.Rotate(Vector3.right,-y*turnSpeed,Space.Self);
+	
+	Debug.Log((transform.position.y-lastpoint)+", "+(Time.deltaTime*Time.deltaTime)+", "+(transform.position.y-lastpoint)/(Time.deltaTime*Time.deltaTime));
+	lastpoint = transform.position.y;
 }
 
