@@ -46,7 +46,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\FalloutDeath.js" />
      <Compile Include="Assets\Scripts\FirstPersonController.js" />
+     <Compile Include="Assets\Scripts\Initialize.js" />
      <Compile Include="Assets\Scripts\LevelStatus.js" />
+     <Compile Include="Assets\Scripts\ObjectProperty.js" />
      <Compile Include="Assets\Scripts\Respawn.js" />
      <Compile Include="Assets\Scripts\SpringFollowCamera.js" />
      <Compile Include="Assets\Scripts\ThirdPersonController.js" />

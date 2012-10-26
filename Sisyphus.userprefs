@@ -1,14 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FirstPersonController.js">
-    <Files>
-      <File FileName="Assets\Scripts\ThirdPersonController.js" Line="455" Column="1" />
-      <File FileName="Assets\Scripts\SpringFollowCamera.js" Line="19" Column="12" />
-      <File FileName="Assets\Scripts\FirstPersonController.js" Line="29" Column="31" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Ian\Documents\GitHub\Sisyphus\Assets\Scripts\Initialize.js" line="40" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
