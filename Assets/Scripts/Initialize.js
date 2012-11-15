@@ -9,7 +9,7 @@ function CreateObject (newname, oldname) {
 		allData[oldname].pop();
 		return newname;
 	}
-	else if (!ObjectExists(newname)) {
+	else if (!ObjectExists(oldname)) {
 		allData[newname] = {};
 		return newname;
 	}
@@ -37,9 +37,9 @@ function ObjectExists (objectname) {
 }
 
 function printData () {
-	var printable = "";
+	Debug.Log("Beginning Data Print:");
 	for (var i : DictionaryEntry in allData) {
-		printable = printable + i.Key +" : "+ i.Value +"\n";
+		Debug.Log(i.Key+" : "+i.Value);
 	}
-	Debug.Log(printable);
+	Debug.Log("End Data Print");
 }

@@ -46,6 +46,10 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\ObjectPropertyEditor.js" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{4A199D2F-946E-C285-0707-77E73EB205B2}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	   Other similar extension points exist, see Microsoft.Common.targets.
