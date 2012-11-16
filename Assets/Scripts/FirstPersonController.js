@@ -2,7 +2,7 @@ var target : Camera;
 var controller : CharacterController;
 var walkSpeed : int = 10;
 var turnSpeed : float = 1;
-var gravity : float = 200.0;
+var gravity : float = 2000.0;
 
 var lastpoint : float = 0;
 
@@ -26,7 +26,7 @@ function Update () {
 	forward = controller.transform.TransformDirection(Vector3.forward);
 	forward.y = 0;
 //	Debug.Log(forward);
-	moveDirection = Vector3(h,0,0);
+	moveDirection = Vector3(h,0,v);
 	moveDirection = transform.TransformDirection(moveDirection);
 	moveDirection = moveDirection*walkSpeed;
 	moveDirection.y -= gravity*Time.deltaTime;
