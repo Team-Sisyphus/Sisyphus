@@ -2,17 +2,17 @@ var target : Camera;
 var controller : CharacterController;
 var walkSpeed : int = 10;
 var turnSpeed : float = 1;
-var gravity : float = 2000.0;
+var gravity : float = 200000.0;
 
 var lastpoint : float = 0;
 
 function Awake () {
 	if (!target){
 		target = camera;
-		Debug.Log("Target Automatically Assigned");
+		Debug.Log("Target Automatically Assigned as: "+target);
 	}
 	controller = target.collider;
-	Debug.Log("Found Collider");
+	Debug.Log("Found Collider: "+controller);
 }
 
 
